@@ -8,12 +8,24 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
         
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             text-align: center;
-            background-color: #f4f4f4;
+            background: linear-gradient(to bottom, #7e7e7e, #ffffff);
+            color: black;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         header {
@@ -48,7 +60,7 @@
         }
 
         .home-button {
-            background-color: #808080; /* Grey color */
+            background-color: #808080;
             color: white;
             padding: 20px 40px;
             font-size: 24px;
@@ -56,6 +68,7 @@
             border-radius: 5px;
             cursor: pointer;
             margin-top: 50px;
+            margin-bottom: 100px; /* Added space before footer */
             animation: fadeInButton 2s ease-in-out;
         }
 
@@ -71,14 +84,14 @@
         }
 
         .home-button:hover {
-            background-color: #666666; /* Darker grey on hover */
+            background-color: #666666;
         }
 
         .big-message {
-            margin-top: 50px; /* Equal spacing from button */
+            margin-top: 50px;
             font-size: 40px;
             font-weight: bold;
-            color: black; /* Black color for the message */
+            color: black;
             animation: fadeInBigMessage 2s ease-in-out;
         }
 
@@ -93,10 +106,9 @@
             }
         }
 
-        /* Add space before the image and make it larger */
         .sad-image {
-            width: 500px; /* Larger image size */
-            margin-top: 80px; /* Increased space before the image */
+            width: 500px;
+            margin-top: 120px; /* Increased space between navbar and image */
             animation: fadeInImage 2s ease-in-out;
         }
 
@@ -121,7 +133,6 @@
             width: 100%;
             text-align: center;
         }
-
     </style>
 </head>
 <body>
@@ -129,20 +140,16 @@
         <div class="logo">STEAM SURFER</div>
     </header>
     
-    <!-- Sad Image -->
     <img src="sad.jpg" alt="Sad Image" class="sad-image">
 
-    <!-- Big Message -->
     <div class="big-message">
         STILL IN DEVELOPMENT :( <br> We are working hard to bring you exciting content. Stay with us!
     </div>
 
-    <!-- Home Button -->
     <div>
         <button class="home-button" onclick="window.location.href='index.html';">Go to Home</button>
     </div>
 
-    <!-- Footer with Updated Information -->
     <footer>
         Made By Aaryan Sehgal | Contact: aaryan.sehgal18@gmail.com
     </footer>
