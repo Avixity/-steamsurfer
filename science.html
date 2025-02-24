@@ -17,9 +17,28 @@
             margin: 0;
             padding: 0;
             text-align: center;
+            background: linear-gradient(to bottom, #7e7e7e, #ffffff);
+            color: black;
+            position: relative;
+            overflow-y: auto;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(44, 44, 44, 0.3);
+            pointer-events: none;
+        }
+
         header {
-            background-color: black;
+            background-color: rgba(0, 0, 0, 0.8);
             color: white;
             padding: 25px;
             font-size: 32px;
@@ -85,6 +104,7 @@
         .content h2 {
             font-size: 30px;
             margin-top: 40px;
+            color: black;
         }
         .content ul {
             list-style-type: square;
@@ -97,14 +117,8 @@
         .content a:hover {
             text-decoration: underline;
         }
-        .coming-soon {
-            margin-top: 80px;
-            font-size: 28px;
-            font-weight: bold;
-            text-align: center;
-        }
         footer {
-            background-color: black;
+            background-color: rgba(0, 0, 0, 0.955);
             color: white;
             padding: 20px;
             font-size: 20px;
@@ -126,26 +140,10 @@
             }
         });
 
-        // Function to smoothly scroll to the top when clicking the "SCIENCE" logo
         function scrollToTop() {
             window.scrollTo({
                 top: 0,
                 behavior: "smooth"
-            });
-        }
-
-        // Function to handle search action
-        function handleSearch() {
-            var searchQuery = document.getElementById('search-input').value.toLowerCase();
-            var listItems = document.querySelectorAll('.scientific-field');
-
-            listItems.forEach(function(item) {
-                var text = item.textContent.toLowerCase();
-                if (text.includes(searchQuery)) {
-                    item.classList.remove('hidden');
-                } else {
-                    item.classList.add('hidden');
-                }
             });
         }
     </script>
@@ -156,7 +154,7 @@
             SCIENCE
         </div>
         <div class="search-box">
-            <input type="text" id="search-input" placeholder="Search..." onkeyup="handleSearch()">
+            <input type="text" id="search-input" placeholder="Search...">
             <button onclick="window.location.href='index.html';">Home</button>
         </div>
     </header>
